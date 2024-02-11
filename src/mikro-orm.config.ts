@@ -4,6 +4,7 @@ import { Post } from "./entities/Post";
 import { MikroORM } from "@mikro-orm/postgresql";
 import path from 'path'
 import { Migrator } from "@mikro-orm/migrations";
+import { User } from "./entities/User";
 
 export default {
     migrations: {
@@ -11,7 +12,7 @@ export default {
         pathTs: path.join("src", "./migrations"),
         glob: '!(*.d).{js,ts}',
     },
-    entities: [Post],
+    entities: [Post, User],
     dbName: DATABASE_NAME,
     user: DATABASE_USER, 
     password: DATABASE_PASSWORD,
